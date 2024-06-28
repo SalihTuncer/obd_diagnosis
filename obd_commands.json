@@ -1,0 +1,2629 @@
+{
+    "mode_0": [],
+    "mode_1": [
+        {
+            "name": "PIDS_A",
+            "desc": "Supported PIDs [01-20]",
+            "command": "0100",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "STATUS",
+            "desc": "Status since DTCs cleared",
+            "command": "0101",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "FREEZE_DTC",
+            "desc": "DTC that triggered the freeze frame",
+            "command": "0102",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "FUEL_STATUS",
+            "desc": "Fuel System Status",
+            "command": "0103",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "ENGINE_LOAD",
+            "desc": "Calculated Engine Load",
+            "command": "0104",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "COOLANT_TEMP",
+            "desc": "Engine Coolant Temperature",
+            "command": "0105",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "SHORT_FUEL_TRIM_1",
+            "desc": "Short Term Fuel Trim - Bank 1",
+            "command": "0106",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "LONG_FUEL_TRIM_1",
+            "desc": "Long Term Fuel Trim - Bank 1",
+            "command": "0107",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "SHORT_FUEL_TRIM_2",
+            "desc": "Short Term Fuel Trim - Bank 2",
+            "command": "0108",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "LONG_FUEL_TRIM_2",
+            "desc": "Long Term Fuel Trim - Bank 2",
+            "command": "0109",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "FUEL_PRESSURE",
+            "desc": "Fuel Pressure",
+            "command": "010A",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "INTAKE_PRESSURE",
+            "desc": "Intake Manifold Pressure",
+            "command": "010B",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "RPM",
+            "desc": "Engine RPM",
+            "command": "010C",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "SPEED",
+            "desc": "Vehicle Speed",
+            "command": "010D",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "TIMING_ADVANCE",
+            "desc": "Timing Advance",
+            "command": "010E",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "INTAKE_TEMP",
+            "desc": "Intake Air Temp",
+            "command": "010F",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "MAF",
+            "desc": "Air Flow Rate (MAF)",
+            "command": "0110",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "THROTTLE_POS",
+            "desc": "Throttle Position",
+            "command": "0111",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "AIR_STATUS",
+            "desc": "Secondary Air Status",
+            "command": "0112",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_SENSORS",
+            "desc": "O2 Sensors Present",
+            "command": "0113",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_B1S1",
+            "desc": "O2: Bank 1 - Sensor 1 Voltage",
+            "command": "0114",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_B1S2",
+            "desc": "O2: Bank 1 - Sensor 2 Voltage",
+            "command": "0115",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_B1S3",
+            "desc": "O2: Bank 1 - Sensor 3 Voltage",
+            "command": "0116",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_B1S4",
+            "desc": "O2: Bank 1 - Sensor 4 Voltage",
+            "command": "0117",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_B2S1",
+            "desc": "O2: Bank 2 - Sensor 1 Voltage",
+            "command": "0118",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_B2S2",
+            "desc": "O2: Bank 2 - Sensor 2 Voltage",
+            "command": "0119",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_B2S3",
+            "desc": "O2: Bank 2 - Sensor 3 Voltage",
+            "command": "011A",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_B2S4",
+            "desc": "O2: Bank 2 - Sensor 4 Voltage",
+            "command": "011B",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "OBD_COMPLIANCE",
+            "desc": "OBD Standards Compliance",
+            "command": "011C",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_SENSORS_ALT",
+            "desc": "O2 Sensors Present (alternate)",
+            "command": "011D",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "AUX_INPUT_STATUS",
+            "desc": "Auxiliary input status (power take off)",
+            "command": "011E",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "RUN_TIME",
+            "desc": "Engine Run Time",
+            "command": "011F",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "PIDS_B",
+            "desc": "Supported PIDs [21-40]",
+            "command": "0120",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DISTANCE_W_MIL",
+            "desc": "Distance Traveled with MIL on",
+            "command": "0121",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "FUEL_RAIL_PRESSURE_VAC",
+            "desc": "Fuel Rail Pressure (relative to vacuum)",
+            "command": "0122",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "FUEL_RAIL_PRESSURE_DIRECT",
+            "desc": "Fuel Rail Pressure (direct inject)",
+            "command": "0123",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S1_WR_VOLTAGE",
+            "desc": "02 Sensor 1 WR Lambda Voltage",
+            "command": "0124",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S2_WR_VOLTAGE",
+            "desc": "02 Sensor 2 WR Lambda Voltage",
+            "command": "0125",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S3_WR_VOLTAGE",
+            "desc": "02 Sensor 3 WR Lambda Voltage",
+            "command": "0126",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S4_WR_VOLTAGE",
+            "desc": "02 Sensor 4 WR Lambda Voltage",
+            "command": "0127",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S5_WR_VOLTAGE",
+            "desc": "02 Sensor 5 WR Lambda Voltage",
+            "command": "0128",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S6_WR_VOLTAGE",
+            "desc": "02 Sensor 6 WR Lambda Voltage",
+            "command": "0129",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S7_WR_VOLTAGE",
+            "desc": "02 Sensor 7 WR Lambda Voltage",
+            "command": "012A",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S8_WR_VOLTAGE",
+            "desc": "02 Sensor 8 WR Lambda Voltage",
+            "command": "012B",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "COMMANDED_EGR",
+            "desc": "Commanded EGR",
+            "command": "012C",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "EGR_ERROR",
+            "desc": "EGR Error",
+            "command": "012D",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "EVAPORATIVE_PURGE",
+            "desc": "Commanded Evaporative Purge",
+            "command": "012E",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "FUEL_LEVEL",
+            "desc": "Fuel Level Input",
+            "command": "012F",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "WARMUPS_SINCE_DTC_CLEAR",
+            "desc": "Number of warm-ups since codes cleared",
+            "command": "0130",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DISTANCE_SINCE_DTC_CLEAR",
+            "desc": "Distance traveled since codes cleared",
+            "command": "0131",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "EVAP_VAPOR_PRESSURE",
+            "desc": "Evaporative system vapor pressure",
+            "command": "0132",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "BAROMETRIC_PRESSURE",
+            "desc": "Barometric Pressure",
+            "command": "0133",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S1_WR_CURRENT",
+            "desc": "02 Sensor 1 WR Lambda Current",
+            "command": "0134",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S2_WR_CURRENT",
+            "desc": "02 Sensor 2 WR Lambda Current",
+            "command": "0135",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S3_WR_CURRENT",
+            "desc": "02 Sensor 3 WR Lambda Current",
+            "command": "0136",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S4_WR_CURRENT",
+            "desc": "02 Sensor 4 WR Lambda Current",
+            "command": "0137",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S5_WR_CURRENT",
+            "desc": "02 Sensor 5 WR Lambda Current",
+            "command": "0138",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S6_WR_CURRENT",
+            "desc": "02 Sensor 6 WR Lambda Current",
+            "command": "0139",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S7_WR_CURRENT",
+            "desc": "02 Sensor 7 WR Lambda Current",
+            "command": "013A",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "O2_S8_WR_CURRENT",
+            "desc": "02 Sensor 8 WR Lambda Current",
+            "command": "013B",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "CATALYST_TEMP_B1S1",
+            "desc": "Catalyst Temperature: Bank 1 - Sensor 1",
+            "command": "013C",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "CATALYST_TEMP_B2S1",
+            "desc": "Catalyst Temperature: Bank 2 - Sensor 1",
+            "command": "013D",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "CATALYST_TEMP_B1S2",
+            "desc": "Catalyst Temperature: Bank 1 - Sensor 2",
+            "command": "013E",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "CATALYST_TEMP_B2S2",
+            "desc": "Catalyst Temperature: Bank 2 - Sensor 2",
+            "command": "013F",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "PIDS_C",
+            "desc": "Supported PIDs [41-60]",
+            "command": "0140",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "STATUS_DRIVE_CYCLE",
+            "desc": "Monitor status this drive cycle",
+            "command": "0141",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "CONTROL_MODULE_VOLTAGE",
+            "desc": "Control module voltage",
+            "command": "0142",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "ABSOLUTE_LOAD",
+            "desc": "Absolute load value",
+            "command": "0143",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "COMMANDED_EQUIV_RATIO",
+            "desc": "Commanded equivalence ratio",
+            "command": "0144",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "RELATIVE_THROTTLE_POS",
+            "desc": "Relative throttle position",
+            "command": "0145",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "AMBIANT_AIR_TEMP",
+            "desc": "Ambient air temperature",
+            "command": "0146",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "THROTTLE_POS_B",
+            "desc": "Absolute throttle position B",
+            "command": "0147",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "THROTTLE_POS_C",
+            "desc": "Absolute throttle position C",
+            "command": "0148",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "ACCELERATOR_POS_D",
+            "desc": "Accelerator pedal position D",
+            "command": "0149",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "ACCELERATOR_POS_E",
+            "desc": "Accelerator pedal position E",
+            "command": "014A",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "ACCELERATOR_POS_F",
+            "desc": "Accelerator pedal position F",
+            "command": "014B",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "THROTTLE_ACTUATOR",
+            "desc": "Commanded throttle actuator",
+            "command": "014C",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "RUN_TIME_MIL",
+            "desc": "Time run with MIL on",
+            "command": "014D",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "TIME_SINCE_DTC_CLEARED",
+            "desc": "Time since trouble codes cleared",
+            "command": "014E",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "MAX_VALUES",
+            "desc": "Various Max values",
+            "command": "014F",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "MAX_MAF",
+            "desc": "Maximum value for mass air flow sensor",
+            "command": "0150",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "FUEL_TYPE",
+            "desc": "Fuel Type",
+            "command": "0151",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "ETHANOL_PERCENT",
+            "desc": "Ethanol Fuel Percent",
+            "command": "0152",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "EVAP_VAPOR_PRESSURE_ABS",
+            "desc": "Absolute Evap system Vapor Pressure",
+            "command": "0153",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "EVAP_VAPOR_PRESSURE_ALT",
+            "desc": "Evap system vapor pressure",
+            "command": "0154",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "SHORT_O2_TRIM_B1",
+            "desc": "Short term secondary O2 trim - Bank 1",
+            "command": "0155",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "LONG_O2_TRIM_B1",
+            "desc": "Long term secondary O2 trim - Bank 1",
+            "command": "0156",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "SHORT_O2_TRIM_B2",
+            "desc": "Short term secondary O2 trim - Bank 2",
+            "command": "0157",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "LONG_O2_TRIM_B2",
+            "desc": "Long term secondary O2 trim - Bank 2",
+            "command": "0158",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "FUEL_RAIL_PRESSURE_ABS",
+            "desc": "Fuel rail pressure (absolute)",
+            "command": "0159",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "RELATIVE_ACCEL_POS",
+            "desc": "Relative accelerator pedal position",
+            "command": "015A",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "HYBRID_BATTERY_REMAINING",
+            "desc": "Hybrid battery pack remaining life",
+            "command": "015B",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "OIL_TEMP",
+            "desc": "Engine oil temperature",
+            "command": "015C",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "FUEL_INJECT_TIMING",
+            "desc": "Fuel injection timing",
+            "command": "015D",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "FUEL_RATE",
+            "desc": "Engine fuel rate",
+            "command": "015E",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "EMISSION_REQ",
+            "desc": "Designed emission requirements",
+            "command": "015F",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        }
+    ],
+    "mode_2": [
+        {
+            "name": "DTC_PIDS_A",
+            "desc": "DTC Supported PIDs [01-20]",
+            "command": "0200",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_STATUS",
+            "desc": "DTC Status since DTCs cleared",
+            "command": "0201",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_FREEZE_DTC",
+            "desc": "DTC DTC that triggered the freeze frame",
+            "command": "0202",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_FUEL_STATUS",
+            "desc": "DTC Fuel System Status",
+            "command": "0203",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_ENGINE_LOAD",
+            "desc": "DTC Calculated Engine Load",
+            "command": "0204",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_COOLANT_TEMP",
+            "desc": "DTC Engine Coolant Temperature",
+            "command": "0205",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_SHORT_FUEL_TRIM_1",
+            "desc": "DTC Short Term Fuel Trim - Bank 1",
+            "command": "0206",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_LONG_FUEL_TRIM_1",
+            "desc": "DTC Long Term Fuel Trim - Bank 1",
+            "command": "0207",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_SHORT_FUEL_TRIM_2",
+            "desc": "DTC Short Term Fuel Trim - Bank 2",
+            "command": "0208",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_LONG_FUEL_TRIM_2",
+            "desc": "DTC Long Term Fuel Trim - Bank 2",
+            "command": "0209",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_FUEL_PRESSURE",
+            "desc": "DTC Fuel Pressure",
+            "command": "020A",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_INTAKE_PRESSURE",
+            "desc": "DTC Intake Manifold Pressure",
+            "command": "020B",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_RPM",
+            "desc": "DTC Engine RPM",
+            "command": "020C",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_SPEED",
+            "desc": "DTC Vehicle Speed",
+            "command": "020D",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_TIMING_ADVANCE",
+            "desc": "DTC Timing Advance",
+            "command": "020E",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_INTAKE_TEMP",
+            "desc": "DTC Intake Air Temp",
+            "command": "020F",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_MAF",
+            "desc": "DTC Air Flow Rate (MAF)",
+            "command": "0210",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_THROTTLE_POS",
+            "desc": "DTC Throttle Position",
+            "command": "0211",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_AIR_STATUS",
+            "desc": "DTC Secondary Air Status",
+            "command": "0212",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_SENSORS",
+            "desc": "DTC O2 Sensors Present",
+            "command": "0213",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_B1S1",
+            "desc": "DTC O2: Bank 1 - Sensor 1 Voltage",
+            "command": "0214",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_B1S2",
+            "desc": "DTC O2: Bank 1 - Sensor 2 Voltage",
+            "command": "0215",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_B1S3",
+            "desc": "DTC O2: Bank 1 - Sensor 3 Voltage",
+            "command": "0216",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_B1S4",
+            "desc": "DTC O2: Bank 1 - Sensor 4 Voltage",
+            "command": "0217",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_B2S1",
+            "desc": "DTC O2: Bank 2 - Sensor 1 Voltage",
+            "command": "0218",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_B2S2",
+            "desc": "DTC O2: Bank 2 - Sensor 2 Voltage",
+            "command": "0219",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_B2S3",
+            "desc": "DTC O2: Bank 2 - Sensor 3 Voltage",
+            "command": "021A",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_B2S4",
+            "desc": "DTC O2: Bank 2 - Sensor 4 Voltage",
+            "command": "021B",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_OBD_COMPLIANCE",
+            "desc": "DTC OBD Standards Compliance",
+            "command": "021C",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_SENSORS_ALT",
+            "desc": "DTC O2 Sensors Present (alternate)",
+            "command": "021D",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_AUX_INPUT_STATUS",
+            "desc": "DTC Auxiliary input status (power take off)",
+            "command": "021E",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_RUN_TIME",
+            "desc": "DTC Engine Run Time",
+            "command": "021F",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_PIDS_B",
+            "desc": "DTC Supported PIDs [21-40]",
+            "command": "0220",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_DISTANCE_W_MIL",
+            "desc": "DTC Distance Traveled with MIL on",
+            "command": "0221",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_FUEL_RAIL_PRESSURE_VAC",
+            "desc": "DTC Fuel Rail Pressure (relative to vacuum)",
+            "command": "0222",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_FUEL_RAIL_PRESSURE_DIRECT",
+            "desc": "DTC Fuel Rail Pressure (direct inject)",
+            "command": "0223",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S1_WR_VOLTAGE",
+            "desc": "DTC 02 Sensor 1 WR Lambda Voltage",
+            "command": "0224",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S2_WR_VOLTAGE",
+            "desc": "DTC 02 Sensor 2 WR Lambda Voltage",
+            "command": "0225",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S3_WR_VOLTAGE",
+            "desc": "DTC 02 Sensor 3 WR Lambda Voltage",
+            "command": "0226",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S4_WR_VOLTAGE",
+            "desc": "DTC 02 Sensor 4 WR Lambda Voltage",
+            "command": "0227",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S5_WR_VOLTAGE",
+            "desc": "DTC 02 Sensor 5 WR Lambda Voltage",
+            "command": "0228",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S6_WR_VOLTAGE",
+            "desc": "DTC 02 Sensor 6 WR Lambda Voltage",
+            "command": "0229",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S7_WR_VOLTAGE",
+            "desc": "DTC 02 Sensor 7 WR Lambda Voltage",
+            "command": "022A",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S8_WR_VOLTAGE",
+            "desc": "DTC 02 Sensor 8 WR Lambda Voltage",
+            "command": "022B",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_COMMANDED_EGR",
+            "desc": "DTC Commanded EGR",
+            "command": "022C",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_EGR_ERROR",
+            "desc": "DTC EGR Error",
+            "command": "022D",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_EVAPORATIVE_PURGE",
+            "desc": "DTC Commanded Evaporative Purge",
+            "command": "022E",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_FUEL_LEVEL",
+            "desc": "DTC Fuel Level Input",
+            "command": "022F",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_WARMUPS_SINCE_DTC_CLEAR",
+            "desc": "DTC Number of warm-ups since codes cleared",
+            "command": "0230",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_DISTANCE_SINCE_DTC_CLEAR",
+            "desc": "DTC Distance traveled since codes cleared",
+            "command": "0231",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_EVAP_VAPOR_PRESSURE",
+            "desc": "DTC Evaporative system vapor pressure",
+            "command": "0232",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_BAROMETRIC_PRESSURE",
+            "desc": "DTC Barometric Pressure",
+            "command": "0233",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S1_WR_CURRENT",
+            "desc": "DTC 02 Sensor 1 WR Lambda Current",
+            "command": "0234",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S2_WR_CURRENT",
+            "desc": "DTC 02 Sensor 2 WR Lambda Current",
+            "command": "0235",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S3_WR_CURRENT",
+            "desc": "DTC 02 Sensor 3 WR Lambda Current",
+            "command": "0236",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S4_WR_CURRENT",
+            "desc": "DTC 02 Sensor 4 WR Lambda Current",
+            "command": "0237",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S5_WR_CURRENT",
+            "desc": "DTC 02 Sensor 5 WR Lambda Current",
+            "command": "0238",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S6_WR_CURRENT",
+            "desc": "DTC 02 Sensor 6 WR Lambda Current",
+            "command": "0239",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S7_WR_CURRENT",
+            "desc": "DTC 02 Sensor 7 WR Lambda Current",
+            "command": "023A",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_O2_S8_WR_CURRENT",
+            "desc": "DTC 02 Sensor 8 WR Lambda Current",
+            "command": "023B",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_CATALYST_TEMP_B1S1",
+            "desc": "DTC Catalyst Temperature: Bank 1 - Sensor 1",
+            "command": "023C",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_CATALYST_TEMP_B2S1",
+            "desc": "DTC Catalyst Temperature: Bank 2 - Sensor 1",
+            "command": "023D",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_CATALYST_TEMP_B1S2",
+            "desc": "DTC Catalyst Temperature: Bank 1 - Sensor 2",
+            "command": "023E",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_CATALYST_TEMP_B2S2",
+            "desc": "DTC Catalyst Temperature: Bank 2 - Sensor 2",
+            "command": "023F",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_PIDS_C",
+            "desc": "DTC Supported PIDs [41-60]",
+            "command": "0240",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_STATUS_DRIVE_CYCLE",
+            "desc": "DTC Monitor status this drive cycle",
+            "command": "0241",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_CONTROL_MODULE_VOLTAGE",
+            "desc": "DTC Control module voltage",
+            "command": "0242",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_ABSOLUTE_LOAD",
+            "desc": "DTC Absolute load value",
+            "command": "0243",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_COMMANDED_EQUIV_RATIO",
+            "desc": "DTC Commanded equivalence ratio",
+            "command": "0244",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_RELATIVE_THROTTLE_POS",
+            "desc": "DTC Relative throttle position",
+            "command": "0245",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_AMBIANT_AIR_TEMP",
+            "desc": "DTC Ambient air temperature",
+            "command": "0246",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_THROTTLE_POS_B",
+            "desc": "DTC Absolute throttle position B",
+            "command": "0247",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_THROTTLE_POS_C",
+            "desc": "DTC Absolute throttle position C",
+            "command": "0248",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_ACCELERATOR_POS_D",
+            "desc": "DTC Accelerator pedal position D",
+            "command": "0249",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_ACCELERATOR_POS_E",
+            "desc": "DTC Accelerator pedal position E",
+            "command": "024A",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_ACCELERATOR_POS_F",
+            "desc": "DTC Accelerator pedal position F",
+            "command": "024B",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_THROTTLE_ACTUATOR",
+            "desc": "DTC Commanded throttle actuator",
+            "command": "024C",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_RUN_TIME_MIL",
+            "desc": "DTC Time run with MIL on",
+            "command": "024D",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_TIME_SINCE_DTC_CLEARED",
+            "desc": "DTC Time since trouble codes cleared",
+            "command": "024E",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_MAX_VALUES",
+            "desc": "DTC Various Max values",
+            "command": "024F",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_MAX_MAF",
+            "desc": "DTC Maximum value for mass air flow sensor",
+            "command": "0250",
+            "bytes": 6,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_FUEL_TYPE",
+            "desc": "DTC Fuel Type",
+            "command": "0251",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_ETHANOL_PERCENT",
+            "desc": "DTC Ethanol Fuel Percent",
+            "command": "0252",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_EVAP_VAPOR_PRESSURE_ABS",
+            "desc": "DTC Absolute Evap system Vapor Pressure",
+            "command": "0253",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_EVAP_VAPOR_PRESSURE_ALT",
+            "desc": "DTC Evap system vapor pressure",
+            "command": "0254",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_SHORT_O2_TRIM_B1",
+            "desc": "DTC Short term secondary O2 trim - Bank 1",
+            "command": "0255",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_LONG_O2_TRIM_B1",
+            "desc": "DTC Long term secondary O2 trim - Bank 1",
+            "command": "0256",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_SHORT_O2_TRIM_B2",
+            "desc": "DTC Short term secondary O2 trim - Bank 2",
+            "command": "0257",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_LONG_O2_TRIM_B2",
+            "desc": "DTC Long term secondary O2 trim - Bank 2",
+            "command": "0258",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_FUEL_RAIL_PRESSURE_ABS",
+            "desc": "DTC Fuel rail pressure (absolute)",
+            "command": "0259",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_RELATIVE_ACCEL_POS",
+            "desc": "DTC Relative accelerator pedal position",
+            "command": "025A",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_HYBRID_BATTERY_REMAINING",
+            "desc": "DTC Hybrid battery pack remaining life",
+            "command": "025B",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_OIL_TEMP",
+            "desc": "DTC Engine oil temperature",
+            "command": "025C",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_FUEL_INJECT_TIMING",
+            "desc": "DTC Fuel injection timing",
+            "command": "025D",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_FUEL_RATE",
+            "desc": "DTC Engine fuel rate",
+            "command": "025E",
+            "bytes": 4,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "DTC_EMISSION_REQ",
+            "desc": "DTC Designed emission requirements",
+            "command": "025F",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        }
+    ],
+    "mode_3": [
+        {
+            "name": "GET_DTC",
+            "desc": "Get DTCs",
+            "command": "03",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        }
+    ],
+    "mode_4": [
+        {
+            "name": "CLEAR_DTC",
+            "desc": "Clear DTCs and Freeze data",
+            "command": "04",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        }
+    ],
+    "mode_5": [],
+    "mode_6": [
+        {
+            "name": "MIDS_A",
+            "desc": "Supported MIDs [01-20]",
+            "command": "0600",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B1S1",
+            "desc": "O2 Sensor Monitor Bank 1 - Sensor 1",
+            "command": "0601",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B1S2",
+            "desc": "O2 Sensor Monitor Bank 1 - Sensor 2",
+            "command": "0602",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B1S3",
+            "desc": "O2 Sensor Monitor Bank 1 - Sensor 3",
+            "command": "0603",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B1S4",
+            "desc": "O2 Sensor Monitor Bank 1 - Sensor 4",
+            "command": "0604",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B2S1",
+            "desc": "O2 Sensor Monitor Bank 2 - Sensor 1",
+            "command": "0605",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B2S2",
+            "desc": "O2 Sensor Monitor Bank 2 - Sensor 2",
+            "command": "0606",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B2S3",
+            "desc": "O2 Sensor Monitor Bank 2 - Sensor 3",
+            "command": "0607",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B2S4",
+            "desc": "O2 Sensor Monitor Bank 2 - Sensor 4",
+            "command": "0608",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B3S1",
+            "desc": "O2 Sensor Monitor Bank 3 - Sensor 1",
+            "command": "0609",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B3S2",
+            "desc": "O2 Sensor Monitor Bank 3 - Sensor 2",
+            "command": "060A",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B3S3",
+            "desc": "O2 Sensor Monitor Bank 3 - Sensor 3",
+            "command": "060B",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B3S4",
+            "desc": "O2 Sensor Monitor Bank 3 - Sensor 4",
+            "command": "060C",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B4S1",
+            "desc": "O2 Sensor Monitor Bank 4 - Sensor 1",
+            "command": "060D",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B4S2",
+            "desc": "O2 Sensor Monitor Bank 4 - Sensor 2",
+            "command": "060E",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B4S3",
+            "desc": "O2 Sensor Monitor Bank 4 - Sensor 3",
+            "command": "060F",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_B4S4",
+            "desc": "O2 Sensor Monitor Bank 4 - Sensor 4",
+            "command": "0610",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MIDS_B",
+            "desc": "Supported MIDs [21-40]",
+            "command": "0620",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_CATALYST_B1",
+            "desc": "Catalyst Monitor Bank 1",
+            "command": "0621",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_CATALYST_B2",
+            "desc": "Catalyst Monitor Bank 2",
+            "command": "0622",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_CATALYST_B3",
+            "desc": "Catalyst Monitor Bank 3",
+            "command": "0623",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_CATALYST_B4",
+            "desc": "Catalyst Monitor Bank 4",
+            "command": "0624",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_EGR_B1",
+            "desc": "EGR Monitor Bank 1",
+            "command": "0631",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_EGR_B2",
+            "desc": "EGR Monitor Bank 2",
+            "command": "0632",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_EGR_B3",
+            "desc": "EGR Monitor Bank 3",
+            "command": "0633",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_EGR_B4",
+            "desc": "EGR Monitor Bank 4",
+            "command": "0634",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_VVT_B1",
+            "desc": "VVT Monitor Bank 1",
+            "command": "0635",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_VVT_B2",
+            "desc": "VVT Monitor Bank 2",
+            "command": "0636",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_VVT_B3",
+            "desc": "VVT Monitor Bank 3",
+            "command": "0637",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_VVT_B4",
+            "desc": "VVT Monitor Bank 4",
+            "command": "0638",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_EVAP_150",
+            "desc": "EVAP Monitor (Cap Off / 0.150\")",
+            "command": "0639",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_EVAP_090",
+            "desc": "EVAP Monitor (0.090\")",
+            "command": "063A",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_EVAP_040",
+            "desc": "EVAP Monitor (0.040\")",
+            "command": "063B",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_EVAP_020",
+            "desc": "EVAP Monitor (0.020\")",
+            "command": "063C",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_PURGE_FLOW",
+            "desc": "Purge Flow Monitor",
+            "command": "063D",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MIDS_C",
+            "desc": "Supported MIDs [41-60]",
+            "command": "0640",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B1S1",
+            "desc": "O2 Sensor Heater Monitor Bank 1 - Sensor 1",
+            "command": "0641",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B1S2",
+            "desc": "O2 Sensor Heater Monitor Bank 1 - Sensor 2",
+            "command": "0642",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B1S3",
+            "desc": "O2 Sensor Heater Monitor Bank 1 - Sensor 3",
+            "command": "0643",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B1S4",
+            "desc": "O2 Sensor Heater Monitor Bank 1 - Sensor 4",
+            "command": "0644",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B2S1",
+            "desc": "O2 Sensor Heater Monitor Bank 2 - Sensor 1",
+            "command": "0645",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B2S2",
+            "desc": "O2 Sensor Heater Monitor Bank 2 - Sensor 2",
+            "command": "0646",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B2S3",
+            "desc": "O2 Sensor Heater Monitor Bank 2 - Sensor 3",
+            "command": "0647",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B2S4",
+            "desc": "O2 Sensor Heater Monitor Bank 2 - Sensor 4",
+            "command": "0648",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B3S1",
+            "desc": "O2 Sensor Heater Monitor Bank 3 - Sensor 1",
+            "command": "0649",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B3S2",
+            "desc": "O2 Sensor Heater Monitor Bank 3 - Sensor 2",
+            "command": "064A",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B3S3",
+            "desc": "O2 Sensor Heater Monitor Bank 3 - Sensor 3",
+            "command": "064B",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B3S4",
+            "desc": "O2 Sensor Heater Monitor Bank 3 - Sensor 4",
+            "command": "064C",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B4S1",
+            "desc": "O2 Sensor Heater Monitor Bank 4 - Sensor 1",
+            "command": "064D",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B4S2",
+            "desc": "O2 Sensor Heater Monitor Bank 4 - Sensor 2",
+            "command": "064E",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B4S3",
+            "desc": "O2 Sensor Heater Monitor Bank 4 - Sensor 3",
+            "command": "064F",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_O2_HEATER_B4S4",
+            "desc": "O2 Sensor Heater Monitor Bank 4 - Sensor 4",
+            "command": "0650",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MIDS_D",
+            "desc": "Supported MIDs [61-80]",
+            "command": "0660",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_HEATED_CATALYST_B1",
+            "desc": "Heated Catalyst Monitor Bank 1",
+            "command": "0661",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_HEATED_CATALYST_B2",
+            "desc": "Heated Catalyst Monitor Bank 2",
+            "command": "0662",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_HEATED_CATALYST_B3",
+            "desc": "Heated Catalyst Monitor Bank 3",
+            "command": "0663",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_HEATED_CATALYST_B4",
+            "desc": "Heated Catalyst Monitor Bank 4",
+            "command": "0664",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_SECONDARY_AIR_1",
+            "desc": "Secondary Air Monitor 1",
+            "command": "0671",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_SECONDARY_AIR_2",
+            "desc": "Secondary Air Monitor 2",
+            "command": "0672",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_SECONDARY_AIR_3",
+            "desc": "Secondary Air Monitor 3",
+            "command": "0673",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_SECONDARY_AIR_4",
+            "desc": "Secondary Air Monitor 4",
+            "command": "0674",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MIDS_E",
+            "desc": "Supported MIDs [81-A0]",
+            "command": "0680",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_FUEL_SYSTEM_B1",
+            "desc": "Fuel System Monitor Bank 1",
+            "command": "0681",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_FUEL_SYSTEM_B2",
+            "desc": "Fuel System Monitor Bank 2",
+            "command": "0682",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_FUEL_SYSTEM_B3",
+            "desc": "Fuel System Monitor Bank 3",
+            "command": "0683",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_FUEL_SYSTEM_B4",
+            "desc": "Fuel System Monitor Bank 4",
+            "command": "0684",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_BOOST_PRESSURE_B1",
+            "desc": "Boost Pressure Control Monitor Bank 1",
+            "command": "0685",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_BOOST_PRESSURE_B2",
+            "desc": "Boost Pressure Control Monitor Bank 1",
+            "command": "0686",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_NOX_ABSORBER_B1",
+            "desc": "NOx Absorber Monitor Bank 1",
+            "command": "0690",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_NOX_ABSORBER_B2",
+            "desc": "NOx Absorber Monitor Bank 2",
+            "command": "0691",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_NOX_CATALYST_B1",
+            "desc": "NOx Catalyst Monitor Bank 1",
+            "command": "0698",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_NOX_CATALYST_B2",
+            "desc": "NOx Catalyst Monitor Bank 2",
+            "command": "0699",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MIDS_F",
+            "desc": "Supported MIDs [A1-C0]",
+            "command": "06A0",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_GENERAL",
+            "desc": "Misfire Monitor General Data",
+            "command": "06A1",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_1",
+            "desc": "Misfire Cylinder 1 Data",
+            "command": "06A2",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_2",
+            "desc": "Misfire Cylinder 2 Data",
+            "command": "06A3",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_3",
+            "desc": "Misfire Cylinder 3 Data",
+            "command": "06A4",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_4",
+            "desc": "Misfire Cylinder 4 Data",
+            "command": "06A5",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_5",
+            "desc": "Misfire Cylinder 5 Data",
+            "command": "06A6",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_6",
+            "desc": "Misfire Cylinder 6 Data",
+            "command": "06A7",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_7",
+            "desc": "Misfire Cylinder 7 Data",
+            "command": "06A8",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_8",
+            "desc": "Misfire Cylinder 8 Data",
+            "command": "06A9",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_9",
+            "desc": "Misfire Cylinder 9 Data",
+            "command": "06AA",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_10",
+            "desc": "Misfire Cylinder 10 Data",
+            "command": "06AB",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_11",
+            "desc": "Misfire Cylinder 11 Data",
+            "command": "06AC",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_MISFIRE_CYLINDER_12",
+            "desc": "Misfire Cylinder 12 Data",
+            "command": "06AD",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_PM_FILTER_B1",
+            "desc": "PM Filter Monitor Bank 1",
+            "command": "06B0",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        },
+        {
+            "name": "MONITOR_PM_FILTER_B2",
+            "desc": "PM Filter Monitor Bank 2",
+            "command": "06B1",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        }
+    ],
+    "mode_7": [
+        {
+            "name": "GET_CURRENT_DTC",
+            "desc": "Get DTCs from the current/last driving cycle",
+            "command": "07",
+            "bytes": 0,
+            "ecu": 255,
+            "fast": false,
+            "header": "7E0"
+        }
+    ],
+    "mode_8": [],
+    "mode_9": [
+        {
+            "name": "PIDS_9A",
+            "desc": "Supported PIDs [01-20]",
+            "command": "0900",
+            "bytes": 7,
+            "ecu": 255,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "VIN_MESSAGE_COUNT",
+            "desc": "VIN Message Count",
+            "command": "0901",
+            "bytes": 3,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "VIN",
+            "desc": "Vehicle Identification Number",
+            "command": "0902",
+            "bytes": 22,
+            "ecu": 2,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "CALIBRATION_ID_MESSAGE_COUNT",
+            "desc": "Calibration ID message count for PID 04",
+            "command": "0903",
+            "bytes": 3,
+            "ecu": 255,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "CALIBRATION_ID",
+            "desc": "Calibration ID",
+            "command": "0904",
+            "bytes": 18,
+            "ecu": 255,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "CVN_MESSAGE_COUNT",
+            "desc": "CVN Message Count for PID 06",
+            "command": "0905",
+            "bytes": 3,
+            "ecu": 255,
+            "fast": true,
+            "header": "7E0"
+        },
+        {
+            "name": "CVN",
+            "desc": "Calibration Verification Numbers",
+            "command": "0906",
+            "bytes": 10,
+            "ecu": 255,
+            "fast": true,
+            "header": "7E0"
+        }
+    ]
+}
