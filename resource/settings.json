@@ -1,0 +1,18 @@
+{
+  "logging": {
+    "logLevel": "DEBUG",
+    "logFile": "output/logs/obd.log"
+  },
+  "stage": {
+    "name": "dev"
+  },
+  "commandos": {
+    "allCommandos": "resource/commands/all.json",
+    "supportedCommandos": "resource/commands/megane_3.json"
+  },
+  "connection": {
+    "type": "async",
+    "connected": true,
+    "interval": 2
+  }
+}
