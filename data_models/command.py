@@ -9,7 +9,7 @@ class OBDCommandModel(BaseModel):
     desc: str
     command: bytes
     bytes_: int
-    decoder: callable
+    decoder: callable = lambda x: x
     ecu: int = ECU.ALL
     fast: bool = False
     header: bytes = ECU_HEADER.ENGINE

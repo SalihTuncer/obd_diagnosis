@@ -38,7 +38,7 @@ class StageSettings(BaseModel):
         return name
 
 
-class CommandosSettings(BaseModel):
+class CommandSettings(BaseModel):
     allCommandos: NewPath | FilePath
     supportedCommandos: NewPath | FilePath
 
@@ -60,5 +60,5 @@ class ConnectionSettings(BaseModel):
 class Settings(BaseModel):
     logging: LogSettings
     stage: StageSettings
-    commandos: CommandosSettings
+    commandos: CommandSettings
     connection: ConnectionSettings

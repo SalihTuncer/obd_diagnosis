@@ -2,6 +2,8 @@ import time
 
 import obd
 
+from data_models.command import OBDCommandModel
+
 
 class QueryManager:
     def __init__(self, delay_cmds=2):
@@ -35,7 +37,7 @@ class QueryManager:
 
         self.async_conn = obd.Async(delay_cmds=delay_cmds)
 
-    def sync_queries(self, cmds: list[obd.OBDCommand]) -> None:
+    def sync_queries(self, cmds: list[OBDCommandModel]) -> None:
         """
             Queries the given connection for all available commands.
 
@@ -45,8 +47,10 @@ class QueryManager:
         if not self.is_sync_connected():
             self.connect_sync()
 
-        for cmd in cmds:
+        cmd_model: OBDCommandModel
+        for cmd_model in cmds:
 
+            cmd = cmd_model.to_obd_command()
             resp = self.sync_conn.query(cmd.command)  # send the command, and parse the resp
 
             if resp.is_null():
@@ -55,7 +59,7 @@ class QueryManager:
 
             obd.logger.info(f'{cmd.name}: {resp.value}')
 
-    def async_queries(self, cmds: list[obd.OBDCommand], duration=60) -> None:
+    def async_queries(self, cmds: list[OBDCommandModel], duration=60) -> None:
         """
             Queries the given connection for all available commands asynchronously.
 
@@ -66,8 +70,9 @@ class QueryManager:
         if not self.is_async_connected():
             self.connect_async()
 
-        cmd: obd.OBDCommand
-        for cmd in cmds:
+        cmd_model: OBDCommandModel
+        for cmd_model in cmds:
+            cmd = cmd_model.to_obd_command()
             self.async_conn.watch(cmd.command, callback=self.cmd_to_cli)
 
         self.async_conn.start()

@@ -3,11 +3,11 @@ import json
 import obd
 
 from data_models.command import OBDCommandModel
-from data_models.settings import CommandosSettings
+from data_models.settings import CommandSettings
 
 
 class CommandHelper:
-    def __init__(self, settings: CommandosSettings):
+    def __init__(self, settings: CommandSettings):
         self.settings = settings
 
     def get_commands_from_file(self, file: str) -> dict[str, list[obd.OBDCommand]]:
