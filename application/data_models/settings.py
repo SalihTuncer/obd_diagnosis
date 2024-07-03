@@ -25,19 +25,6 @@ class LogSettings(BaseModel):
         return log_levels[level]
 
 
-class StageSettings(BaseModel):
-    name: str
-
-    # This is a custom validator
-    @field_validator('name')
-    @classmethod
-    def validate_name(cls, name):
-        if name not in ['test', 'dev', 'prod']:
-            raise ValueError('Stage must be one of test, dev, prod')
-
-        return name
-
-
 class CommandSettings(BaseModel):
     allCommandos: NewPath | FilePath
     supportedCommandos: NewPath | FilePath
@@ -59,6 +46,5 @@ class ConnectionSettings(BaseModel):
 
 class Settings(BaseModel):
     logging: LogSettings
-    stage: StageSettings
     commandos: CommandSettings
     connection: ConnectionSettings

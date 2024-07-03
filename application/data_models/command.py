@@ -1,15 +1,15 @@
 import obd
 from obd import ECU
 from obd.protocols import ECU_HEADER
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class OBDCommandModel(BaseModel):
     name: str
     desc: str
     command: bytes
-    bytes_: int
-    decoder: callable = lambda x: x
+    bytes_: int = Field(alias='bytes')
+    decoder: any = lambda x: x
     ecu: int = ECU.ALL
     fast: bool = False
     header: bytes = ECU_HEADER.ENGINE

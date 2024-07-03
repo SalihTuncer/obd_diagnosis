@@ -1,10 +1,11 @@
 import json
+import os
 
 import obd
 
-from application.command_helper import CommandHelper
-from application.query_manager import QueryManager
-from data_models.settings import LogSettings, Settings
+from application.data_models.settings import Settings, LogSettings
+from application.utils.command_helper import CommandHelper
+from application.utils.query_manager import QueryManager
 
 
 def load_settings(file: str) -> Settings:
@@ -47,6 +48,12 @@ command_helper = CommandHelper(
 query_manager = QueryManager(
     delay_cmds=settings.connection.interval
 )
+
+# Export all supported commands to a JSON if not already done
+if not os.path.exists(settings.commandos.supportedCommandos):
+    command_helper.save_all_supported_commands(
+        connection=query_manager.sync_conn
+    )
 
 
 def get_configuration():

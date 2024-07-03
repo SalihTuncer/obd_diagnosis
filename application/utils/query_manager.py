@@ -2,7 +2,7 @@ import time
 
 import obd
 
-from data_models.command import OBDCommandModel
+from application.data_models.command import OBDCommandModel
 
 
 class QueryManager:

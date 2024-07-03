@@ -2,8 +2,7 @@ import json
 
 import obd
 
-from data_models.command import OBDCommandModel
-from data_models.settings import CommandSettings
+from application.data_models.settings import CommandSettings
 
 
 class CommandHelper:
@@ -41,38 +40,6 @@ class CommandHelper:
                     )
 
             return cmds_result
-
-    def save_all_commands(self) -> None:
-        """
-            Saves all the commands to a json file.
-        :return: None
-        """
-
-        # make a copy of a list
-        modes = list(obd.commands.modes)
-
-        cmds = {}
-
-        for idx, mode in enumerate(modes):
-
-            mode_cmds = []
-
-            for cmd in mode:
-
-                if not cmd:
-                    continue
-
-                cmd.header = cmd.header.decode('utf-8')
-                cmd.command = cmd.command.decode('utf-8')
-                del cmd.decode
-
-                mode_cmds.append(cmd.__dict__)
-
-            cmds[f'mode_{idx}'] = mode_cmds
-
-        # list to json file
-        with open(self.settings.allCommandos, 'w') as f:
-            json.dump(cmds, f, indent=4)
 
     def save_all_supported_commands(self, connection: obd.OBD) -> None:
         """

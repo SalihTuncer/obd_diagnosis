@@ -1,9 +1,8 @@
-import obd
 from fastapi import APIRouter, Depends
 from starlette.responses import JSONResponse
 
 from application.api.deps import get_query_manager
-from application.query_manager import QueryManager
+from application.utils.query_manager import QueryManager
 
 router = APIRouter()
 
