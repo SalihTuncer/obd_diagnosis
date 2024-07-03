@@ -6,8 +6,8 @@ import obd
 class QueryManager:
     def __init__(self, delay_cmds=2):
 
-        self._connect_sync()
-        self._connect_async(delay_cmds=delay_cmds)
+        self.connect_sync()
+        self.connect_async(delay_cmds=delay_cmds)
 
     def __del__(self):
         if self.sync_conn.is_connected():
@@ -16,7 +16,7 @@ class QueryManager:
         if self.async_conn.is_connected():
             self.async_conn.close()
 
-    def _connect_sync(self) -> None:
+    def connect_sync(self) -> None:
         """
             Connects to the OBD interface synchronously.
 
@@ -25,7 +25,7 @@ class QueryManager:
 
         self.sync_conn = obd.OBD()
 
-    def _connect_async(self, delay_cmds=2) -> None:
+    def connect_async(self, delay_cmds=2) -> None:
         """
             Connects to the OBD interface asynchronously.
 
@@ -42,8 +42,8 @@ class QueryManager:
             :param cmds: The commands to query
             :return: None
         """
-        if not self._is_sync_connected():
-            self._connect_sync()
+        if not self.is_sync_connected():
+            self.connect_sync()
 
         for cmd in cmds:
 
@@ -63,8 +63,8 @@ class QueryManager:
             :param duration: The duration to query the commands for
             :return: None
         """
-        if not self._is_async_connected():
-            self._connect_async()
+        if not self.is_async_connected():
+            self.connect_async()
 
         cmd: obd.OBDCommand
         for cmd in cmds:
@@ -85,7 +85,7 @@ class QueryManager:
         """
         obd.logger.info(f'{resp.command}: {resp.value}')
 
-    def _is_sync_connected(self) -> bool:
+    def is_sync_connected(self) -> bool:
         """
             Returns whether the synchronous connection is connected.
 
@@ -93,7 +93,7 @@ class QueryManager:
         """
         return self.sync_conn.is_connected()
 
-    def _is_async_connected(self) -> bool:
+    def is_async_connected(self) -> bool:
         """
             Returns whether the asynchronous connection is connected.
 
