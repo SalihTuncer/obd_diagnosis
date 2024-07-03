@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from starlette.responses import JSONResponse
 
-from application.api_v1.deps import get_configuration
+from application.api.deps import get_configuration
 from data_models.settings import Settings
 
 router = APIRouter()

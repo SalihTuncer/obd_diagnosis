@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from starlette.responses import JSONResponse
 
-from application.api_v1.deps import get_query_manager
+from application.api.deps import get_query_manager
 from application.query_manager import QueryManager
 
 router = APIRouter()

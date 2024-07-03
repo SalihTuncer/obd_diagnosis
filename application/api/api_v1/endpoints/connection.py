@@ -2,7 +2,7 @@ import obd
 from fastapi import APIRouter, Depends
 from starlette.responses import JSONResponse
 
-from application.api_v1.deps import get_query_manager
+from application.api.deps import get_query_manager
 from application.query_manager import QueryManager
 
 router = APIRouter()
@@ -21,7 +21,6 @@ async def get_connections(query_manager: QueryManager = Depends(get_query_manage
 
 @router.post('/sync')
 async def sync_connections(
-        commands: list[obd.OBDCommand],
         query_manager: QueryManager = Depends(get_query_manager)
 ):
     query_manager.connect_sync()
@@ -36,7 +35,6 @@ async def sync_connections(
 
 @router.post('/async')
 async def async_connections(
-        commands: list[obd.OBDCommand],
         query_manager: QueryManager = Depends(get_query_manager)
 ):
     query_manager.connect_async()

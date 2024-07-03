@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from application.api_v1.api import api_v1_router
+from application.api.api_v1.api import api_v1_router
 
 app = FastAPI(
     title='OBD2 API',
