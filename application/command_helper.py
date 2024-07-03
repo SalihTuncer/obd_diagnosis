@@ -2,6 +2,7 @@ import json
 
 import obd
 
+from data_models.command import OBDCommandModel
 from data_models.settings import CommandosSettings
 
 
@@ -27,16 +28,16 @@ class CommandHelper:
 
                 for cmd in cmds:
                     cmds_result[mode].append(
-                        obd.OBDCommand(
+                        OBDCommandModel(
                             name=cmd['name'],
                             desc=cmd['desc'],
                             command=bytes(cmd['command'], 'utf-8'),
-                            _bytes=cmd['bytes'],
+                            bytes_=cmd['bytes'],
                             decoder=lambda x: x,
                             ecu=cmd['ecu'],
                             fast=cmd['fast'],
                             header=bytes(cmd['header'], 'utf-8')
-                        )
+                        ).to_serializable()
                     )
 
             return cmds_result
