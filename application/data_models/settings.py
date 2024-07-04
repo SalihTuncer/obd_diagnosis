@@ -24,10 +24,22 @@ class LogSettings(BaseModel):
 
         return log_levels[level]
 
+    def to_serializable(self):
+        return {
+            'logLevel': self.logLevel,
+            'logFile': str(self.logFile)
+        }
+
 
 class CommandSettings(BaseModel):
     allCommandos: NewPath | FilePath
     supportedCommandos: NewPath | FilePath
+
+    def to_serializable(self):
+        return {
+            'allCommandos': str(self.allCommandos),
+            'supportedCommandos': str(self.supportedCommandos)
+        }
 
 
 class ConnectionSettings(BaseModel):
@@ -43,8 +55,22 @@ class ConnectionSettings(BaseModel):
 
         return connection_type
 
+    def to_serializable(self):
+        return {
+            'type': self.type,
+            'connected': self.connected,
+            'interval': self.interval
+        }
+
 
 class Settings(BaseModel):
     logging: LogSettings
     commandos: CommandSettings
     connection: ConnectionSettings
+
+    def to_serializable(self):
+        return {
+            'logging': self.logging.to_serializable(),
+            'commandos': self.commandos.to_serializable(),
+            'connection': self.connection.to_serializable()
+        }

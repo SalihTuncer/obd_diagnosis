@@ -7,9 +7,15 @@ from application.data_models.settings import Settings
 router = APIRouter()
 
 
-@router.get("/")
+@router.get("/", response_model=Settings)
 async def get_configuration(settings: Settings = Depends(get_configuration)):
+    """
+        Returns the current configuration.
+
+        :param settings: The settings
+        :return The configuration
+    """
     return JSONResponse(
-        content=settings.model_dump(),
+        content=settings.to_serializable(),
         status_code=200
     )

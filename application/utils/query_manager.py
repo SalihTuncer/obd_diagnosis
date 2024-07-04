@@ -1,5 +1,3 @@
-import time
-
 import obd
 
 from application.data_models.command import OBDCommandModel
@@ -37,7 +35,7 @@ class QueryManager:
 
         self.async_conn = obd.Async(delay_cmds=delay_cmds)
 
-    def sync_queries(self, cmds: list[OBDCommandModel]) -> None:
+    def sync_queries(self, cmds: list[OBDCommandModel]) -> list[OBDCommandModel]:
         """
             Queries the given connection for all available commands.
 
@@ -59,12 +57,14 @@ class QueryManager:
 
             obd.logger.info(f'{cmd.name}: {resp.value}')
 
-    def async_queries(self, cmds: list[OBDCommandModel], duration=60) -> None:
+        # Using map function to apply to_serializable to each object in the list
+        return list(map(lambda cmd: cmd.to_serializable(), cmds))
+
+    def async_queries(self, cmds: list[OBDCommandModel]) -> list[OBDCommandModel]:
         """
             Queries the given connection for all available commands asynchronously.
 
             :param cmds: The commands to query
-            :param duration: The duration to query the commands for
             :return: None
         """
         if not self.is_async_connected():
@@ -77,9 +77,8 @@ class QueryManager:
 
         self.async_conn.start()
 
-        time.sleep(duration)
-
-        self.async_conn.stop()
+        # Using map function to apply to_serializable to each object in the list
+        return list(map(lambda cmd: cmd.to_serializable(), cmds))
 
     def cmd_to_cli(self, resp: obd.OBDResponse) -> None:
         """
@@ -105,3 +104,19 @@ class QueryManager:
             :return: Whether the asynchronous connection is connected
         """
         return self.async_conn.is_connected()
+
+    def is_async_running(self) -> bool:
+        """
+            Returns whether the asynchronous connection is running.
+
+            :return: Whether the asynchronous connection is running
+        """
+        return self.async_conn.running
+
+    def stop_async(self) -> None:
+        """
+            Stops the asynchronous connection.
+
+            :return: None
+        """
+        self.async_conn.stop()

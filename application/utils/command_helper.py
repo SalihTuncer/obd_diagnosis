@@ -2,6 +2,7 @@ import json
 
 import obd
 
+from application.data_models.command import OBDCommandModel
 from application.data_models.settings import CommandSettings
 
 
@@ -31,7 +32,7 @@ class CommandHelper:
                             name=cmd['name'],
                             desc=cmd['desc'],
                             command=bytes(cmd['command'], 'utf-8'),
-                            bytes_=cmd['bytes'],
+                            bytes=cmd['bytes'],
                             decoder=lambda x: x,
                             ecu=cmd['ecu'],
                             fast=cmd['fast'],
@@ -74,3 +75,10 @@ class CommandHelper:
         # list to json file
         with open(self.settings.supportedCommandos, 'w') as f:
             json.dump(cmds, f, indent=4)
+
+    def are_supported_commands_saved(self) -> bool:
+        """
+            Checks if the supported commands are already saved.
+        :return: True if the supported commands are saved, False otherwise
+        """
+        return self.settings.supportedCommandos.exists()

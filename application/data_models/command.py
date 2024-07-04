@@ -1,3 +1,5 @@
+from typing import Optional
+
 import obd
 from obd import ECU
 from obd.protocols import ECU_HEADER
@@ -35,7 +37,7 @@ class OBDCommandModel(BaseModel):
             name=obd_command.name,
             desc=obd_command.desc,
             command=obd_command.command,
-            bytes_=obd_command.bytes,
+            bytes=obd_command.bytes,
             decoder=obd_command.decode,
             ecu=obd_command.ecu,
             fast=obd_command.fast,
@@ -52,3 +54,16 @@ class OBDCommandModel(BaseModel):
             'fast': self.fast,
             'header': self.header.decode('utf-8')
         }
+
+
+class OBDCommandsModel(BaseModel):
+    mode_0: Optional[list[OBDCommandModel]]
+    mode_1: Optional[list[OBDCommandModel]]
+    mode_2: Optional[list[OBDCommandModel]]
+    mode_3: Optional[list[OBDCommandModel]]
+    mode_4: Optional[list[OBDCommandModel]]
+    mode_5: Optional[list[OBDCommandModel]]
+    mode_6: Optional[list[OBDCommandModel]]
+    mode_7: Optional[list[OBDCommandModel]]
+    mode_8: Optional[list[OBDCommandModel]]
+    mode_9: Optional[list[OBDCommandModel]]
