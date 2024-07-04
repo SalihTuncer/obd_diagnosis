@@ -25,8 +25,17 @@ class LogSettings(BaseModel):
         return log_levels[level]
 
     def to_serializable(self):
+        log_levels = {
+            50: 'CRITICAL',
+            40: 'ERROR',
+            30: 'WARNING',
+            20: 'INFO',
+            10: 'DEBUG',
+            0: 'NOTSET'
+        }
+
         return {
-            'logLevel': self.logLevel,
+            'logLevel': log_levels[self.logLevel],
             'logFile': str(self.logFile)
         }
 
