@@ -6,18 +6,32 @@ from application.data_models.settings import LogSettings, Settings
 from application.utils.command_helper import CommandHelper
 from application.utils.query_manager import QueryManager
 
+SETTINGS_PATH = 'resource/settings.json'
 
-def load_settings(file: str) -> Settings:
+
+def load_settings() -> Settings:
     """
         Loads the settings from the given file.
 
-        :param file: The file to load the settings from
         :return: The settings loaded from the file
     """
-    with open(file, 'r') as f:
+    with open(SETTINGS_PATH, 'r') as f:
         settings_json = json.load(f)
 
         return Settings(**settings_json)
+
+
+def update_settings(new_settings: Settings):
+    """
+        Updates the settings in the file.
+
+        :param new_settings: The settings to update
+    """
+    with open(SETTINGS_PATH, 'w') as f:
+        json.dump(new_settings.to_serializable(), f, indent=4)
+
+    global settings
+    settings = new_settings
 
 
 def configure_logger(log_settings: LogSettings):
@@ -31,9 +45,7 @@ def configure_logger(log_settings: LogSettings):
 
 
 # load the settings
-settings = load_settings(
-    'resource/settings.json'
-)
+settings = load_settings()
 
 # configure the logger
 configure_logger(
