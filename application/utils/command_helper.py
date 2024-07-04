@@ -2,11 +2,12 @@ import json
 
 import obd
 
-from data_models.settings import CommandosSettings
+from application.data_models.command import OBDCommandModel
+from application.data_models.settings import CommandSettings
 
 
 class CommandHelper:
-    def __init__(self, settings: CommandosSettings):
+    def __init__(self, settings: CommandSettings):
         self.settings = settings
 
     def get_commands_from_file(self, file: str) -> dict[str, list[obd.OBDCommand]]:
@@ -27,51 +28,19 @@ class CommandHelper:
 
                 for cmd in cmds:
                     cmds_result[mode].append(
-                        obd.OBDCommand(
+                        OBDCommandModel(
                             name=cmd['name'],
                             desc=cmd['desc'],
                             command=bytes(cmd['command'], 'utf-8'),
-                            _bytes=cmd['bytes'],
+                            bytes=cmd['bytes'],
                             decoder=lambda x: x,
                             ecu=cmd['ecu'],
                             fast=cmd['fast'],
                             header=bytes(cmd['header'], 'utf-8')
-                        )
+                        ).to_serializable()
                     )
 
             return cmds_result
-
-    def save_all_commands(self) -> None:
-        """
-            Saves all the commands to a json file.
-        :return: None
-        """
-
-        # make a copy of a list
-        modes = list(obd.commands.modes)
-
-        cmds = {}
-
-        for idx, mode in enumerate(modes):
-
-            mode_cmds = []
-
-            for cmd in mode:
-
-                if not cmd:
-                    continue
-
-                cmd.header = cmd.header.decode('utf-8')
-                cmd.command = cmd.command.decode('utf-8')
-                del cmd.decode
-
-                mode_cmds.append(cmd.__dict__)
-
-            cmds[f'mode_{idx}'] = mode_cmds
-
-        # list to json file
-        with open(self.settings.allCommandos, 'w') as f:
-            json.dump(cmds, f, indent=4)
 
     def save_all_supported_commands(self, connection: obd.OBD) -> None:
         """
@@ -106,3 +75,10 @@ class CommandHelper:
         # list to json file
         with open(self.settings.supportedCommandos, 'w') as f:
             json.dump(cmds, f, indent=4)
+
+    def are_supported_commands_saved(self) -> bool:
+        """
+            Checks if the supported commands are already saved.
+        :return: True if the supported commands are saved, False otherwise
+        """
+        return self.settings.supportedCommandos.exists()

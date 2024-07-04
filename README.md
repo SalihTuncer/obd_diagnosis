@@ -21,7 +21,7 @@ questions or feedback, please feel free to contact me.
 
 ## Requirements
 
-- An OBD II adapter (Bluetooth or Wi-Fi)
+- An OBD II adapter (Any ELM327 adapter should work)
 - A car with an OBD II system
 
 ## Supported Protocols

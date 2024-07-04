@@ -1,13 +1,13 @@
-import time
-
 import obd
+
+from application.data_models.command import OBDCommandModel
 
 
 class QueryManager:
     def __init__(self, delay_cmds=2):
 
-        self._connect_sync()
-        self._connect_async(delay_cmds=delay_cmds)
+        self.connect_sync()
+        self.connect_async(delay_cmds=delay_cmds)
 
     def __del__(self):
         if self.sync_conn.is_connected():
@@ -16,7 +16,7 @@ class QueryManager:
         if self.async_conn.is_connected():
             self.async_conn.close()
 
-    def _connect_sync(self) -> None:
+    def connect_sync(self) -> None:
         """
             Connects to the OBD interface synchronously.
 
@@ -25,7 +25,7 @@ class QueryManager:
 
         self.sync_conn = obd.OBD()
 
-    def _connect_async(self, delay_cmds=2) -> None:
+    def connect_async(self, delay_cmds=2) -> None:
         """
             Connects to the OBD interface asynchronously.
 
@@ -35,18 +35,20 @@ class QueryManager:
 
         self.async_conn = obd.Async(delay_cmds=delay_cmds)
 
-    def sync_queries(self, cmds: list[obd.OBDCommand]) -> None:
+    def sync_queries(self, cmds: list[OBDCommandModel]) -> list[OBDCommandModel]:
         """
             Queries the given connection for all available commands.
 
             :param cmds: The commands to query
             :return: None
         """
-        if not self._is_sync_connected():
-            self._connect_sync()
+        if not self.is_sync_connected():
+            self.connect_sync()
 
-        for cmd in cmds:
+        cmd_model: OBDCommandModel
+        for cmd_model in cmds:
 
+            cmd = cmd_model.to_obd_command()
             resp = self.sync_conn.query(cmd.command)  # send the command, and parse the resp
 
             if resp.is_null():
@@ -55,26 +57,28 @@ class QueryManager:
 
             obd.logger.info(f'{cmd.name}: {resp.value}')
 
-    def async_queries(self, cmds: list[obd.OBDCommand], duration=60) -> None:
+        # Using map function to apply to_serializable to each object in the list
+        return list(map(lambda cmd: cmd.to_serializable(), cmds))
+
+    def async_queries(self, cmds: list[OBDCommandModel]) -> list[OBDCommandModel]:
         """
             Queries the given connection for all available commands asynchronously.
 
             :param cmds: The commands to query
-            :param duration: The duration to query the commands for
             :return: None
         """
-        if not self._is_async_connected():
-            self._connect_async()
+        if not self.is_async_connected():
+            self.connect_async()
 
-        cmd: obd.OBDCommand
-        for cmd in cmds:
+        cmd_model: OBDCommandModel
+        for cmd_model in cmds:
+            cmd = cmd_model.to_obd_command()
             self.async_conn.watch(cmd.command, callback=self.cmd_to_cli)
 
         self.async_conn.start()
 
-        time.sleep(duration)
-
-        self.async_conn.stop()
+        # Using map function to apply to_serializable to each object in the list
+        return list(map(lambda cmd: cmd.to_serializable(), cmds))
 
     def cmd_to_cli(self, resp: obd.OBDResponse) -> None:
         """
@@ -85,7 +89,7 @@ class QueryManager:
         """
         obd.logger.info(f'{resp.command}: {resp.value}')
 
-    def _is_sync_connected(self) -> bool:
+    def is_sync_connected(self) -> bool:
         """
             Returns whether the synchronous connection is connected.
 
@@ -93,10 +97,26 @@ class QueryManager:
         """
         return self.sync_conn.is_connected()
 
-    def _is_async_connected(self) -> bool:
+    def is_async_connected(self) -> bool:
         """
             Returns whether the asynchronous connection is connected.
 
             :return: Whether the asynchronous connection is connected
         """
         return self.async_conn.is_connected()
+
+    def is_async_running(self) -> bool:
+        """
+            Returns whether the asynchronous connection is running.
+
+            :return: Whether the asynchronous connection is running
+        """
+        return self.async_conn.running
+
+    def stop_async(self) -> None:
+        """
+            Stops the asynchronous connection.
+
+            :return: None
+        """
+        self.async_conn.stop()

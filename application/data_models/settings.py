@@ -24,23 +24,22 @@ class LogSettings(BaseModel):
 
         return log_levels[level]
 
-
-class StageSettings(BaseModel):
-    name: str
-
-    # This is a custom validator
-    @field_validator('name')
-    @classmethod
-    def validate_name(cls, name):
-        if name not in ['test', 'dev', 'prod']:
-            raise ValueError('Stage must be one of test, dev, prod')
-
-        return name
+    def to_serializable(self):
+        return {
+            'logLevel': self.logLevel,
+            'logFile': str(self.logFile)
+        }
 
 
-class CommandosSettings(BaseModel):
+class CommandSettings(BaseModel):
     allCommandos: NewPath | FilePath
     supportedCommandos: NewPath | FilePath
+
+    def to_serializable(self):
+        return {
+            'allCommandos': str(self.allCommandos),
+            'supportedCommandos': str(self.supportedCommandos)
+        }
 
 
 class ConnectionSettings(BaseModel):
@@ -56,9 +55,22 @@ class ConnectionSettings(BaseModel):
 
         return connection_type
 
+    def to_serializable(self):
+        return {
+            'type': self.type,
+            'connected': self.connected,
+            'interval': self.interval
+        }
+
 
 class Settings(BaseModel):
     logging: LogSettings
-    stage: StageSettings
-    commandos: CommandosSettings
+    commandos: CommandSettings
     connection: ConnectionSettings
+
+    def to_serializable(self):
+        return {
+            'logging': self.logging.to_serializable(),
+            'commandos': self.commandos.to_serializable(),
+            'connection': self.connection.to_serializable()
+        }

@@ -1,52 +1,27 @@
-import json
-import os
+import uvicorn
+from fastapi import FastAPI
+from starlette.middleware.cors import CORSMiddleware
 
-import obd
+from application.api.api_v1.api import api_v1_router
 
-from application.application import Application
-from data_models.settings import LogSettings, Settings
+app = FastAPI(
+    title='OBD2 API',
+    description='API to make analysis on OBD2 data',
+    version='0.1.0',
+    openapi_url='/api/v1/openapi.json',
+    docs_url='/api/v1/docs'
+)
 
+# Set all CORS enabled origins
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-def load_settings(file: str) -> Settings:
-    """
-        Loads the settings from the given file.
+app.include_router(api_v1_router)
 
-        :param file: The file to load the settings from
-        :return: The settings loaded from the file
-    """
-    with open(file, 'r') as f:
-        settings_json = json.load(f)
-
-        return Settings(**settings_json)
-
-
-def configure_logger(log_settings: LogSettings):
-    """
-        Configures the logger to print all debug information.
-    """
-    obd.logger.setLevel(log_settings.logLevel)  # enables all debug information
-
-    # logs should be appended to files
-    obd.logger.addHandler(obd.logging.FileHandler(log_settings.logFile, mode='a', encoding='utf-8'))
-
-
-if __name__ == "__main__":
-    # load the settings
-    settings = load_settings('resource/settings.json')
-
-    # configure the logger
-    configure_logger(log_settings=settings.logging)
-
-    app = Application(settings)
-
-    # Export all commands to a JSON if not already done
-    if not os.path.exists(settings.commandos.allCommandos):
-        app.command_helper.save_all_commands()
-
-    # Export all supported commands to a JSON if not already done
-    if not os.path.exists(settings.commandos.supportedCommandos):
-        app.command_helper.save_all_supported_commands(
-            connection=app.get_sync_connection()
-        )
-
-    app.run()
+if __name__ == '__main__':
+    uvicorn.run("main:app", reload=True)
