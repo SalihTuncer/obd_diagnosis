@@ -9,25 +9,27 @@ from application.utils.query_manager import QueryManager
 SETTINGS_PATH = 'resource/settings.json'
 
 
-def load_settings() -> Settings:
+def load_settings(path: str = SETTINGS_PATH) -> Settings:
     """
         Loads the settings from the given file.
 
+        :param path: The path to the settings file
         :return: The settings loaded from the file
     """
-    with open(SETTINGS_PATH, 'r') as f:
+    with open(path, 'r') as f:
         settings_json = json.load(f)
 
         return Settings(**settings_json)
 
 
-def update_settings(new_settings: Settings):
+def update_settings(new_settings: Settings, path: str = SETTINGS_PATH):
     """
         Updates the settings in the file.
 
+        :param path: The path to the settings file
         :param new_settings: The settings to update
     """
-    with open(SETTINGS_PATH, 'w') as f:
+    with open(path, 'w') as f:
         json.dump(new_settings.to_serializable(), f, indent=4)
 
     global settings
