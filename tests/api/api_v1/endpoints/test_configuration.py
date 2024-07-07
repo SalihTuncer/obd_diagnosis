@@ -16,9 +16,9 @@ class TestConfigurationEndpoint(unittest.TestCase):
 
     def setUp(self):
         self.open_patch = mock.patch('builtins.open')
-        self.mock_open = self.open_patch.start()
-
         self.json_dump_patch = mock.patch('json.dump')
+
+        self.mock_open = self.open_patch.start()
         self.mock_json_dump = self.json_dump_patch.start()
 
     def tearDown(self):

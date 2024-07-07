@@ -1,61 +1,58 @@
+import unittest
 from unittest import mock
 
-import pytest
 from fastapi.testclient import TestClient
 
+from application.data_models.connection import ConnectionStatus, SyncConnection, AsyncConnection
 from main import app
 
-client = TestClient(
+CLIENT = TestClient(
     app=app,
     base_url="http://localhost/connection"
 )
 
 
-class ConnectMock:
-    def __init__(self, sync_mock: mock.Mock, async_mock: mock.Mock):
-        self.sync_mock = sync_mock
-        self.async_mock = async_mock
+class TestConnectionEndpoint(unittest.TestCase):
 
+    def setUp(self):
+        base_url = 'application.utils.query_manager.QueryManager'
 
-def test_get_connections_status():
-    response = client.get("/status")
-    assert response.status_code == 200
-    assert "sync_connection" in response.json()
-    assert "async_connection" in response.json()
+        self.sync_conn = mock.patch(f'{base_url}.connect_sync')
+        self.async_conn = mock.patch(f'{base_url}.connect_async')
 
+        self.mock_sync_conn = self.sync_conn.start()
+        self.mock_async_conn = self.async_conn.start()
 
-def test_get_sync_connections_status():
-    response = client.get("/sync")
-    assert response.status_code == 200
-    assert "connected" in response.json()
+    def tearDown(self):
+        self.sync_conn.stop()
+        self.async_conn.stop()
 
+    def test_get_connections_status(self):
+        response = CLIENT.get("/status")
 
-def test_get_async_connections_status():
-    response = client.get("/async")
-    assert response.status_code == 200
-    assert "connected" in response.json()
-    assert "running" in response.json()
+        self.assertEquals(response.status_code, 200)
+        self.assertIsInstance(ConnectionStatus(**response.json()), ConnectionStatus)
 
+    def test_get_sync_connections_status(self):
+        response = CLIENT.get("/sync")
 
-@pytest.fixture
-def mock_connect() -> ConnectMock:
-    base_path = 'application.utils.query_manager.QueryManager'
+        self.assertEquals(response.status_code, 200)
+        self.assertIsInstance(SyncConnection(**response.json()), SyncConnection)
 
-    with mock.patch(f'{base_path}.connect_sync') as sync_connect_mock:
-        with mock.patch(f'{base_path}.connect_async') as async_connect_mock:
-            yield ConnectMock(
-                sync_connect_mock,
-                async_connect_mock
-            )
+    def test_get_async_connections_status(self):
+        response = CLIENT.get("/async")
 
+        self.assertEquals(response.status_code, 200)
+        self.assertIsInstance(AsyncConnection(**response.json()), AsyncConnection)
 
-def test_connect_sync(mock_connect: ConnectMock):
-    response = client.post("/sync")
-    assert response.status_code == 200
-    mock_connect.sync_mock.assert_called_once()
+    def test_connect_sync(self):
+        response = CLIENT.post("/sync")
 
+        self.assertEquals(response.status_code, 200)
+        self.mock_sync_conn.assert_called_once()
 
-def test_connect_async(mock_connect: ConnectMock):
-    response = client.post("/async")
-    assert response.status_code == 200
-    mock_connect.async_mock.assert_called_once()
+    def test_connect_async(self):
+        response = CLIENT.post("/async")
+
+        self.assertEquals(response.status_code, 200)
+        self.mock_async_conn.assert_called_once()
