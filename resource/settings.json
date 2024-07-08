@@ -10,6 +10,6 @@
   "connection": {
     "type": "async",
     "connected": true,
-    "interval": 2
+    "interval": 2.0
   }
 }
