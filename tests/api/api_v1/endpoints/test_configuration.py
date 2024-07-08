@@ -53,3 +53,4 @@ class TestConfigurationEndpoint(unittest.TestCase):
         self.assertEquals(response.status_code, 200)
         self.mock_json_dump.assert_called_once()
         self.mock_open.assert_called_once()
+        self.assertIsInstance(Settings(**response.json()), Settings)
