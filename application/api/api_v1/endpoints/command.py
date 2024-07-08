@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from starlette.responses import JSONResponse
 
-from application.api.deps import get_command_helper, get_configuration
+from application.api.deps import get_command_helper, get_configuration, get_query_manager
 from application.data_models.command import OBDCommandsModel
 from application.data_models.settings import Settings
 from application.utils.command_helper import CommandHelper
@@ -13,7 +13,7 @@ router = APIRouter()
 @router.get("/supported", response_model=OBDCommandsModel)
 async def get_supported_commands(
         command_helper: CommandHelper = Depends(get_command_helper),
-        query_manager: QueryManager = Depends(get_command_helper),
+        query_manager: QueryManager = Depends(get_query_manager),
         settings: Settings = Depends(get_configuration)
 ):
     """
