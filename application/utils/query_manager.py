@@ -5,6 +5,7 @@ from application.data_models.command import OBDCommandModel
 
 class QueryManager:
     def __init__(self, delay_cmds=2):
+        obd.logger.debug('Initializing QueryManager.')
 
         self.sync_conn: obd.OBD | None = None
         self.async_conn: obd.Async | None = None
@@ -13,6 +14,8 @@ class QueryManager:
         self.connect_async(delay_cmds=delay_cmds)
 
     def __del__(self):
+        obd.logger.debug('Deleting QueryManager.')
+
         if self.sync_conn.is_connected():
             self.sync_conn.close()
 
@@ -45,6 +48,8 @@ class QueryManager:
             :param cmds: The commands to query
             :return: None
         """
+        obd.logger.info('Querying the OBD interface synchronously.')
+
         if not self.is_sync_connected():
             self.connect_sync()
 
@@ -52,7 +57,7 @@ class QueryManager:
         for cmd_model in cmds:
 
             cmd = cmd_model.to_obd_command()
-            resp = self.sync_conn.query(cmd.command)  # send the command, and parse the resp
+            resp = self.sync_conn.query(cmd)  # send the command, and parse the resp
 
             if resp.is_null():
                 obd.logger.info(f'{cmd} is not supported.')
@@ -70,13 +75,15 @@ class QueryManager:
             :param cmds: The commands to query
             :return: None
         """
+        obd.logger.info('Querying the OBD interface asynchronously.')
+
         if not self.is_async_connected():
             self.connect_async()
 
         cmd_model: OBDCommandModel
         for cmd_model in cmds:
             cmd = cmd_model.to_obd_command()
-            self.async_conn.watch(cmd.command, callback=self.cmd_to_cli)
+            self.async_conn.watch(cmd, callback=self.cmd_to_cli)
 
         self.async_conn.start()
 
@@ -98,6 +105,8 @@ class QueryManager:
 
             :return: Whether the synchronous connection is connected
         """
+        obd.logger.debug('Checking if the synchronous connection is connected.')
+
         return self.sync_conn.is_connected()
 
     def is_async_connected(self) -> bool:
@@ -106,6 +115,8 @@ class QueryManager:
 
             :return: Whether the asynchronous connection is connected
         """
+        obd.logger.debug('Checking if the asynchronous connection is connected.')
+
         return self.async_conn.is_connected()
 
     def is_async_running(self) -> bool:
@@ -114,6 +125,8 @@ class QueryManager:
 
             :return: Whether the asynchronous connection is running
         """
+        obd.logger.debug('Checking if the asynchronous connection is running.')
+
         return self.async_conn.running
 
     def stop_async(self) -> None:
@@ -122,4 +135,6 @@ class QueryManager:
 
             :return: None
         """
+        obd.logger.debug('Stopping the asynchronous connection.')
+
         self.async_conn.stop()

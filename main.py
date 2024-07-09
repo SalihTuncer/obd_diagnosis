@@ -1,3 +1,4 @@
+import obd
 import uvicorn
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
@@ -24,4 +25,5 @@ app.add_middleware(
 app.include_router(api_v1_router)
 
 if __name__ == '__main__':
-    uvicorn.run("main:app", reload=True)
+    obd.logger.info('Starting the API.')
+    uvicorn.run("main:app")

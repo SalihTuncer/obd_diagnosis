@@ -17,6 +17,8 @@ class CommandHelper:
             :param file: The file to load the commands from
             :return: The commands loaded from the file
         """
+        obd.logger.debug(f'Loading commands from {file}.')
+
         with open(file, 'r') as f:
             cmds_json = json.load(f)
 
@@ -47,6 +49,7 @@ class CommandHelper:
         :param connection: The connection to get the supported commands from
         :return: None
         """
+        obd.logger.debug('Saving all supported commands to a json file.')
 
         # make a copy of a list
         supported_cmds: list[obd.OBDCommand] = connection.supported_commands
@@ -80,4 +83,6 @@ class CommandHelper:
             Checks if the supported commands are already saved.
         :return: True if the supported commands are saved, False otherwise
         """
+        obd.logger.debug('Checking if the supported commands are saved.')
+
         return self.settings.supportedCommandos.exists()

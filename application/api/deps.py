@@ -16,6 +16,8 @@ def load_settings(path: str = SETTINGS_PATH) -> Settings:
         :param path: The path to the settings file
         :return: The settings loaded from the file
     """
+    obd.logger.debug(f'Loading settings from {path}.')
+
     with open(path, 'r') as f:
         settings_json = json.load(f)
 
@@ -64,12 +66,18 @@ query_manager = QueryManager(
 
 
 def get_configuration():
+    obd.logger.debug('Getting configuration.')
+
     return settings
 
 
 def get_command_helper():
+    obd.logger.debug('Getting command helper.')
+
     return command_helper
 
 
 def get_query_manager():
+    obd.logger.debug('Getting query manager.')
+
     return query_manager
