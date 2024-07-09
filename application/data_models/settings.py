@@ -4,40 +4,41 @@ from pydantic import BaseModel, FilePath, NewPath, field_validator
 
 
 class LogSettings(BaseModel):
-    logLevel: str
+    logLevel: str | int
     logFile: NewPath | FilePath
 
     @field_validator('logLevel')
     @classmethod
     def validate_log_level(cls, level):
-        log_levels = {
-            'CRITICAL': logging.CRITICAL,
-            'ERROR': logging.ERROR,
-            'WARNING': logging.WARNING,
-            'INFO': logging.INFO,
-            'DEBUG': logging.DEBUG,
-            'NOTSET': logging.NOTSET,
-        }
-
-        if level not in log_levels:
-            raise ValueError('Invalid log level')
-
-        return log_levels[level]
+        return cls.log_level_to_int(level)
 
     def to_serializable(self):
-        log_levels = {
+        return {
+            'logLevel': self.int_to_log_level(self.logLevel),
+            'logFile': str(self.logFile)
+        }
+
+    @staticmethod
+    def int_to_log_level(level: int) -> str:
+        return {
             50: 'CRITICAL',
             40: 'ERROR',
             30: 'WARNING',
             20: 'INFO',
             10: 'DEBUG',
             0: 'NOTSET'
-        }
+        }[level]
 
+    @staticmethod
+    def log_level_to_int(level: str) -> int:
         return {
-            'logLevel': log_levels[self.logLevel],
-            'logFile': str(self.logFile)
-        }
+            'CRITICAL': 50,
+            'ERROR': 40,
+            'WARNING': 30,
+            'INFO': 20,
+            'DEBUG': 10,
+            'NOTSET': 0
+        }[level]
 
 
 class CommandSettings(BaseModel):

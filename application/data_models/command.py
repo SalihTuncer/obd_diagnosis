@@ -84,13 +84,13 @@ class OBDCommandModel(BaseModel):
 
 
 class OBDCommandsModel(BaseModel):
-    mode_0: Optional[list[OBDCommandModel]]
-    mode_1: Optional[list[OBDCommandModel]]
-    mode_2: Optional[list[OBDCommandModel]]
-    mode_3: Optional[list[OBDCommandModel]]
-    mode_4: Optional[list[OBDCommandModel]]
-    mode_5: Optional[list[OBDCommandModel]]
-    mode_6: Optional[list[OBDCommandModel]]
-    mode_7: Optional[list[OBDCommandModel]]
-    mode_8: Optional[list[OBDCommandModel]]
-    mode_9: Optional[list[OBDCommandModel]]
+    mode_0: Optional[list[OBDCommandModel]] = None
+    mode_1: Optional[list[OBDCommandModel]] = None
+    mode_2: Optional[list[OBDCommandModel]] = None
+    mode_3: Optional[list[OBDCommandModel]] = None
+    mode_4: Optional[list[OBDCommandModel]] = None
+    mode_5: Optional[list[OBDCommandModel]] = None
+    mode_6: Optional[list[OBDCommandModel]] = None
+    mode_7: Optional[list[OBDCommandModel]] = None
+    mode_8: Optional[list[OBDCommandModel]] = None
+    mode_9: Optional[list[OBDCommandModel]] = None
