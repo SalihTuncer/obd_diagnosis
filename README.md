@@ -26,12 +26,21 @@ questions or feedback, please feel free to contact me.
 
 ## Supported Protocols
 
-- ISO 9141-2
-- ISO 14230-4 (KWP2000)
-- ISO 15765-4 (CAN)
-- SAE J1850 VPW
-- SAE J1850 PWM
-- SAE J1939 (Heavy Duty Vehicles)
+| Protocol | Description                            |
+|:---------|:---------------------------------------| 
+| 0        | Automatic                              |
+| 1        | SAE J1850 PWM (41.6 kbaud)             |
+| 2        | SAE J1850 VPW (10.4 kbaud)             |
+| 3        | ISO 9141-2 (5 baud init)               |
+| 4        | ISO 14230-4 KWP (5 baud init)          |
+| 5        | ISO 14230-4 KWP (fast init)            |
+| 6        | ISO 15765-4 CAN (11 bit ID, 500 kbaud) |
+| 7        | ISO 15765-4 CAN (29 bit ID, 500 kbaud) |
+| 8        | ISO 15765-4 CAN (11 bit ID, 250 kbaud) |
+| 9        | ISO 15765-4 CAN (29 bit ID, 250 kbaud) |
+| 10       | SAE J1939 CAN (29 bit ID, 250* kbaud)  |
+| 11       | USER1 CAN (11* bit ID, 125* kbaud)     |
+| 12       | USER2 CAN (11* bit ID, 50* kbaud)      |
 
 ## Installation
 

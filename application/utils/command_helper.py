@@ -33,7 +33,6 @@ class CommandHelper:
                             desc=cmd['desc'],
                             command=bytes(cmd['command'], 'utf-8'),
                             bytes=cmd['bytes'],
-                            decoder=lambda x: x,
                             ecu=cmd['ecu'],
                             fast=cmd['fast'],
                             header=bytes(cmd['header'], 'utf-8')

@@ -6,6 +6,9 @@ from application.data_models.command import OBDCommandModel
 class QueryManager:
     def __init__(self, delay_cmds=2):
 
+        self.sync_conn: obd.OBD | None = None
+        self.async_conn: obd.Async | None = None
+
         self.connect_sync()
         self.connect_async(delay_cmds=delay_cmds)
 
