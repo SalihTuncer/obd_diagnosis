@@ -1,0 +1,14 @@
+services:
+
+  obd_diagnosis:
+    hostname: obd_diagnosis
+    container_name: obd_diagnosis
+
+    restart: unless-stopped
+    network_mode: host
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    command: sh -c "uvicorn main:app --port=8000 --host=0.0.0.0"
