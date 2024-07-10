@@ -48,6 +48,23 @@ questions or feedback, please feel free to contact me.
    ```sh
    git clone https://github.com/SalihTuncer/obd_diagnosis.git
    ```
+2. Start the application via Docker Compose
+   ```sh
+   docker-compose up
+   ```
+
+## Usage
+
+1. Connect your OBD II adapter to your car's OBD II port
+2. Open the URL http://localhost:8000/api/v1/docs in your browser for the Swagger UI
+3. You can use the Swagger UI to interact with the API or you can make requests on your own way.
+
+## Development
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/SalihTuncer/obd_diagnosis.git
+   ```
 2. Create a virtual environment
    ```sh
    python3 -m venv venv
@@ -73,4 +90,4 @@ questions or feedback, please feel free to contact me.
    ```sh
    python3 main.py 
    ```
-
+   

@@ -1,0 +1,5 @@
+.github
+.idea
+venv
+.venv
+tests
